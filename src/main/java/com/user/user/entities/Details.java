@@ -1,7 +1,15 @@
 package com.user.user.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+
+@Entity
+@Table(name = "Details")
 public class Details {
 	
+	@Id
 	private int user_id;
 	private String user_name;
 	private String user_email;
