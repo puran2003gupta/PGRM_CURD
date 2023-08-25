@@ -11,19 +11,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.user.user.entities.Details;
 import com.user.user.services.UserService;
 
 @RestController
+@RequestMapping("/api/users")
+
 public class Controller {
 	@Autowired
 	private UserService us;
 
 	
 	
-	//Get the user
+	//Get the user 
 	@GetMapping("/signup")
 	public List<Details> getUser(){
 		return this.us.getUser();
