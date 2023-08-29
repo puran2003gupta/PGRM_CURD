@@ -40,6 +40,7 @@ public class Controller {
 	//add courses
 	@PostMapping("/signup")
 	public Details addCourse(@RequestBody Details details) {
+		System.out.println(details);
 		return this.us.addUser(details);
 	}
 	

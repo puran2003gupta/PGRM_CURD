@@ -1,7 +1,11 @@
 package com.user.user.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 
@@ -10,6 +14,9 @@ import jakarta.persistence.Table;
 public class Details {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "idGenerator")
+	@SequenceGenerator(name = "idGenerator", sequenceName = "idGenerator",  allocationSize=1)
+	@Column(name = "user_id")
 	private int user_id;
 	private String user_name;
 	private String user_email;
